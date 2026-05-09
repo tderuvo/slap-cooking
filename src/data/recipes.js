@@ -34,6 +34,9 @@ export const recipes = [
       'Serve with a snow of parmesan and absolutely zero apology.',
     ],
     finalSlap: 'Takeout-killer energy for under $8. SLAP.',
+    slapShortcut: "Trader Joe's Penne Arrabbiata and Italian Bomba Hot Pepper Sauce are the move here.",
+    seoTitle: "Assassin's Penne | Trader Joe's Penne Arrabbiata Upgrade Recipe",
+    metaDescription: "Frozen Trader Joe's Penne Arrabbiata gets crispy edges, Calabrian heat, and full takeout-killer energy. This one absolutely slaps.",
   },
   {
     id: 2,
@@ -67,6 +70,9 @@ export const recipes = [
       'Squeeze lime if you\'re feeling dangerous.',
     ],
     finalSlap: 'Better than the $18 version you waited 40 minutes for. SLAP.',
+    slapShortcut: "Trader Joe's Mandarin Orange Chicken gives the best crispy finish for this recipe.",
+    seoTitle: "Orange Chicken After Dark | Trader Joe's Mandarin Orange Chicken Upgrade",
+    metaDescription: "Trader Joe's Mandarin Orange Chicken, air-fried crispy, then hit with sesame oil, scallions, and chili crisp. Better than takeout.",
   },
   {
     id: 3,
@@ -100,6 +106,9 @@ export const recipes = [
       'Finish with a dusting of smoked paprika. Serve immediately. The crunch matters.',
     ],
     finalSlap: 'Midnight mac energy. $4 total. Hits like a main course. SLAP.',
+    slapShortcut: "Trader Joe's Diner Mac & Cheese works ridiculously well here.",
+    seoTitle: "Midnight Mac Attack | Mac & Cheese Glow-Up Recipe",
+    metaDescription: "Boxed mac and cheese upgraded with crispy fried shallots, extra sharp cheddar, and aggressive black pepper. Late-night comfort that slaps.",
   },
   {
     id: 4,
@@ -135,6 +144,9 @@ export const recipes = [
       'Drop chili crisp and scallions over everything. Serve immediately.',
     ],
     finalSlap: 'Late-night flavor that delivers on every single level. SLAP.',
+    slapShortcut: "Trader Joe's Vegetable Fried Rice crisps up beautifully in a hot pan.",
+    seoTitle: "Fried Rice Gone Wild | Trader Joe's Fried Rice Upgrade Recipe",
+    metaDescription: "Trader Joe's Vegetable Fried Rice wok-crisped, topped with a lacy fried egg and chili crisp. Late-night flavor that hits every level.",
   },
   {
     id: 5,
@@ -171,6 +183,9 @@ export const recipes = [
       'Top bun inside: press a layer of kettle chips in. Close it, press down, eat immediately.',
     ],
     finalSlap: 'More crunch per bite than any drive-through on earth. SLAP.',
+    slapShortcut: "Trader Joe's Brioche Hamburger Buns and Sliced American Cheese pull serious weight. The kettle chips go inside the bun — that's the whole move.",
+    seoTitle: "Triple Crunch Burger | Frozen Beef Patty Upgrade with Three Textures",
+    metaDescription: "A frozen beef patty with special sauce, crispy fried onions, and kettle chips pressed into the bun. Three textures, zero regret, more crunch than any drive-through.",
   },
   {
     id: 6,
@@ -208,6 +223,9 @@ export const recipes = [
       'Off heat: heavy parmesan snow and fresh herbs. Eat immediately.',
     ],
     finalSlap: 'Crispy outside, pillow inside. One pan. 18 minutes. SLAP.',
+    slapShortcut: "Trader Joe's Cauliflower Gnocchi gets dangerously good when pan-fried instead of boiled.",
+    seoTitle: "Crispy Gnocchi Situation | Trader Joe's Cauliflower Gnocchi Pan-Fried Recipe",
+    metaDescription: "Trader Joe's Cauliflower Gnocchi pan-fried until shatteringly crispy, finished with brown butter, garlic, and lemon. The move most people miss.",
   },
   {
     id: 7,
@@ -247,6 +265,9 @@ export const recipes = [
       'Top with crushed peanuts, remaining scallions, and a serious squeeze of lime.',
     ],
     finalSlap: 'No delivery fee. No 45-minute wait. No regret. SLAP.',
+    slapShortcut: "Trader Joe's Rice Sticks are built for this. The peanut sauce you build is the move.",
+    seoTitle: "Pad Thai Payback | Frozen Rice Noodles with Homemade Peanut Sauce",
+    metaDescription: "Frozen rice noodles with a two-minute peanut sauce, crushed peanuts, and lime. No delivery fee, no 45-minute wait, no regret.",
   },
   {
     id: 8,
@@ -284,6 +305,9 @@ export const recipes = [
       'Scatter scallions and sesame seeds. Eat immediately.',
     ],
     finalSlap: '$1.50 noodles. Main-character energy. Absolutely SLAP.',
+    slapShortcut: "Trader Joe's Miso Paste turns any ramen packet into a broth worth finishing. One tablespoon — that's all it needs.",
+    seoTitle: "Souped-Up Ramen Bowl | Instant Ramen Upgrade with Miso Tare & Soft Egg",
+    metaDescription: "Instant ramen upgraded with a miso tare, soft-boiled egg, chili oil, and fresh greens. Main-character energy for under two dollars.",
   },
   {
     id: 9,
@@ -322,6 +346,9 @@ export const recipes = [
       'Serve with crema, pickled jalapeños, and hot sauce. Finish with a lime squeeze.',
     ],
     finalSlap: 'Five bucks. Feeds two. Hits hard. SLAP.',
+    slapShortcut: "Trader Joe's canned black beans and frozen brown rice are the entire plan. Everything else is already in your pantry.",
+    seoTitle: "The Five-Dollar Flex | Crispy Black Bean Quesadilla Recipe",
+    metaDescription: "Smashed black beans with crispy caramelized edges, seasoned rice, and crema in a golden quesadilla. Feeds two. Hits hard.",
   },
   {
     id: 10,
@@ -358,6 +385,9 @@ export const recipes = [
       'Serve immediately with more pepper and parmesan on top.',
     ],
     finalSlap: 'Fake-fancy pasta energy. About $7. Absolutely slaps.',
+    slapShortcut: "Trader Joe's Uncured Pancetta is the move — cleaner than bacon, better bite, no waste.",
+    seoTitle: "Lazy Day Carbonara-ish | Easy Spaghetti Carbonara Recipe with Pancetta",
+    metaDescription: "Real egg yolk emulsion, crispy Trader Joe's pancetta, and a serious black pepper blast. Fake-fancy pasta energy that absolutely slaps.",
   },
 ]
 

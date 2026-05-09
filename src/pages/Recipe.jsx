@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { getRecipeBySlug, recipes } from '../data/recipes'
 import { assassinsVariations } from '../data/assassinsVariations'
 
@@ -27,6 +28,21 @@ export default function Recipe() {
 
   return (
     <div className="min-h-screen bg-slap-black">
+      <Helmet>
+        <title>{recipe.seoTitle || `${recipe.title} | Slap Cooking`}</title>
+        <meta name="description" content={recipe.metaDescription || recipe.hook} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://slapcooking.com/recipes/${recipe.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Slap Cooking" />
+        <meta property="og:title" content={recipe.seoTitle || recipe.title} />
+        <meta property="og:description" content={recipe.metaDescription || recipe.hook} />
+        <meta property="og:url" content={`https://slapcooking.com/recipes/${recipe.slug}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={recipe.seoTitle || recipe.title} />
+        <meta name="twitter:description" content={recipe.metaDescription || recipe.hook} />
+      </Helmet>
+
       {/* ──────────────── HERO ──────────────── */}
       <div
         className="relative min-h-[55vh] flex flex-col justify-end grain overflow-hidden"
@@ -92,9 +108,24 @@ export default function Recipe() {
         <div>
           <SectionLabel label="The Shortcut" />
           <h2 className="font-display text-3xl text-slap-cream mb-4">Start here.</h2>
-          <p className="font-body text-slap-muted leading-relaxed text-base">
+          <p className="font-body text-slap-muted leading-relaxed text-base mb-5">
             {recipe.shortcut}
           </p>
+
+          {/* SLAP Shortcut callout */}
+          {recipe.slapShortcut && (
+            <div className="flex gap-3 bg-slap-char rounded-lg p-4 border border-slap-orange/20">
+              <span className="text-base select-none flex-shrink-0 mt-0.5" aria-hidden="true">🔥</span>
+              <div>
+                <p className="font-body text-slap-orange text-[0.65rem] font-bold tracking-widest uppercase mb-1.5">
+                  SLAP Shortcut
+                </p>
+                <p className="font-body text-slap-cream/80 text-sm leading-relaxed">
+                  {recipe.slapShortcut}
+                </p>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* The Slap */}
