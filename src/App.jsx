@@ -7,6 +7,7 @@ import About from './pages/About'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import Recipe from './pages/Recipe'
+import AssassinVariations from './pages/AssassinVariations'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -27,6 +28,7 @@ function Layout() {
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/recipes/assassins-penne/variations" element={<AssassinVariations />} />
           <Route path="/recipes/:slug" element={<Recipe />} />
           {/* Catch-all redirect to home */}
           <Route path="*" element={<Home />} />

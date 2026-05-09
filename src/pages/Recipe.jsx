@@ -1,5 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { getRecipeBySlug, recipes } from '../data/recipes'
+import { assassinsVariations } from '../data/assassinsVariations'
 
 function SectionLabel({ label }) {
   return (
@@ -157,6 +158,50 @@ export default function Recipe() {
             {recipe.finalSlap}
           </p>
         </div>
+
+        {/* ──── More Slaps (Assassin's Penne only) ──── */}
+        {slug === 'assassins-penne' && (
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="inline-block w-5 h-px bg-slap-orange opacity-80 flex-shrink-0" />
+              <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
+                More Slaps
+              </span>
+            </div>
+            <p className="font-body text-slap-muted text-sm mb-6">
+              Same shortcut. Different damage.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+              {assassinsVariations.map((v) => (
+                <Link
+                  key={v.id}
+                  to="/recipes/assassins-penne/variations"
+                  className="group relative bg-slap-char rounded-lg border border-white/8 hover:border-slap-orange/35 p-4 overflow-hidden transition-all duration-200 hover:bg-slap-char/80"
+                >
+                  {/* Left accent bar */}
+                  <div className="absolute left-0 top-3 bottom-3 w-0.5 bg-gradient-to-b from-slap-orange/80 to-transparent rounded-r-full" />
+                  <h4 className="font-display text-base text-slap-cream mb-1.5 group-hover:text-slap-orange transition-colors duration-200">
+                    {v.name}
+                  </h4>
+                  <p className="font-body text-slap-muted text-xs leading-relaxed">
+                    {v.teaser}
+                  </p>
+                </Link>
+              ))}
+            </div>
+
+            <Link
+              to="/recipes/assassins-penne/variations"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-slap-orange/40 text-slap-orange hover:bg-slap-orange hover:text-slap-cream font-body font-semibold text-sm tracking-wide transition-all duration-200"
+            >
+              See All Assassin Variations
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </div>
+        )}
 
         {/* Next Recipe CTA */}
         <div className="border-t border-white/5 pt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
