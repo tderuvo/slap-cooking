@@ -7,36 +7,40 @@ export default function Home() {
     <div className="min-h-screen bg-slap-black">
       {/* ──────────────── HERO ──────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden grain">
-        {/* Background warm glow */}
+
+        {/* Organic kitchen warmth — warm ember behind the headline */}
         <div
-          className="absolute top-0 right-0 w-[60vw] h-[60vh] opacity-20 pointer-events-none"
+          className="absolute pointer-events-none"
           style={{
+            top: '5%',
+            right: '8%',
+            width: '58vw',
+            height: '60vh',
             background:
-              'radial-gradient(ellipse at top right, #ff4500 0%, #cc3700 30%, transparent 70%)',
+              'radial-gradient(ellipse at center, rgba(130, 52, 10, 0.20) 0%, rgba(75, 28, 5, 0.09) 45%, transparent 78%)',
+            filter: 'blur(48px)',
           }}
         />
+        {/* Secondary warmth — low left, like light bouncing off a counter */}
         <div
-          className="absolute bottom-0 left-0 w-[40vw] h-[40vh] opacity-10 pointer-events-none"
+          className="absolute pointer-events-none"
           style={{
+            bottom: '0',
+            left: '0',
+            width: '42vw',
+            height: '42vh',
             background:
-              'radial-gradient(ellipse at bottom left, #f5a623 0%, transparent 70%)',
+              'radial-gradient(ellipse at bottom left, rgba(155, 75, 10, 0.12) 0%, transparent 68%)',
+            filter: 'blur(30px)',
           }}
         />
 
-        {/* Noise texture */}
+        {/* Fine noise texture over the hero */}
         <div
-          className="absolute inset-0 opacity-30 pointer-events-none"
+          className="absolute inset-0 opacity-35 pointer-events-none"
           style={{
             backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E\")",
-          }}
-        />
-
-        {/* Orange accent slash */}
-        <div
-          className="absolute right-0 top-0 w-3 h-full opacity-60"
-          style={{
-            background: 'linear-gradient(to bottom, #ff4500, transparent)',
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.16'/%3E%3C/svg%3E\")",
           }}
         />
 
@@ -45,7 +49,7 @@ export default function Home() {
 
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-8">
-              <span className="inline-block w-8 h-0.5 bg-slap-orange" />
+              <span className="inline-block w-8 h-px bg-slap-orange opacity-80" />
               <span className="font-body text-slap-orange text-sm font-semibold tracking-widest uppercase">
                 This had no business tasting this good
               </span>
@@ -58,9 +62,7 @@ export default function Home() {
               food{' '}
               <span
                 className="text-slap-orange relative inline-block"
-                style={{
-                  textShadow: '0 0 40px rgba(255,69,0,0.5)',
-                }}
+                style={{ textShadow: '0 0 18px rgba(255, 90, 0, 0.28)' }}
               >
                 slap.
               </span>
@@ -79,7 +81,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <a
                 href="#recipes"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slap-orange hover:bg-slap-deep text-slap-cream font-body font-bold text-base tracking-wide transition-all duration-200 hover:scale-105 active:scale-95 shadow-xl shadow-slap-orange/25"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-slap-orange hover:bg-slap-ember text-slap-cream font-body font-bold text-base tracking-wide transition-all duration-200 hover:scale-[1.03] active:scale-95 shadow-[0_4px_24px_rgba(180,60,0,0.30)]"
               >
                 See The Recipes
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -88,23 +90,23 @@ export default function Home() {
               </a>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/15 text-slap-muted hover:text-slap-cream hover:border-white/30 font-body font-medium text-base tracking-wide transition-all duration-200"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border border-white/12 text-slap-muted hover:text-slap-cream hover:border-white/25 font-body font-medium text-base tracking-wide transition-all duration-200"
               >
                 What Is This?
               </Link>
             </div>
 
             {/* Micro copy */}
-            <p className="mt-8 font-body text-slap-muted/60 text-xs tracking-wider uppercase">
+            <p className="mt-8 font-body text-slap-warm/60 text-xs tracking-wider uppercase">
               No food snobbery. No shame. Just meals that hit.
             </p>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
           <span className="font-body text-xs text-slap-muted tracking-widest uppercase">scroll</span>
-          <div className="w-0.5 h-8 bg-gradient-to-b from-slap-muted to-transparent" />
+          <div className="w-px h-8 bg-gradient-to-b from-slap-muted to-transparent" />
         </div>
       </section>
 
@@ -115,7 +117,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="inline-block w-6 h-0.5 bg-slap-orange" />
+              <span className="inline-block w-6 h-px bg-slap-orange opacity-80" />
               <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
                 The Lineup
               </span>
@@ -125,7 +127,7 @@ export default function Home() {
             </h2>
           </div>
           <p className="font-body text-slap-muted text-sm max-w-xs">
-            Grocery-store ingredients. Upgraded. Every single one.
+            10 recipes. Zero shame. All slap.
           </p>
         </div>
 
@@ -140,8 +142,8 @@ export default function Home() {
       {/* ──────────────── BRAND BAR ──────────────── */}
       <section className="py-16 border-t border-white/5">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <p className="font-display text-2xl md:text-3xl text-slap-muted/50 tracking-widest uppercase">
-            Upgrade · Flavor · Flex · Slap
+          <p className="font-display text-xl md:text-2xl text-slap-warm/55 tracking-widest uppercase">
+            Frozen food. Bad decisions. Great outcomes.
           </p>
         </div>
       </section>

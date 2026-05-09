@@ -4,31 +4,45 @@ export default function RecipeCard({ recipe }) {
   return (
     <Link
       to={`/recipes/${recipe.slug}`}
-      className="group block bg-slap-card rounded-2xl overflow-hidden border border-white/5 hover:border-slap-orange/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slap-orange/10"
+      className="group block bg-slap-card rounded-xl overflow-hidden border border-white/8 hover:border-slap-orange/40 transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_28px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_50px_-8px_rgba(0,0,0,0.75),0_0_0_1px_rgba(255,69,0,0.12)]"
     >
-      {/* Image Placeholder */}
+      {/* Image area */}
       <div
-        className="relative h-56 sm:h-60 overflow-hidden stripe-overlay"
+        className="relative h-52 sm:h-56 overflow-hidden"
         style={{
-          background: `linear-gradient(145deg, ${recipe.gradientFrom}, ${recipe.gradientTo})`,
+          background: `linear-gradient(155deg, ${recipe.gradientFrom} 0%, ${recipe.gradientTo} 100%)`,
         }}
       >
-        {/* Diagonal stripes */}
+        {/* Fine noise grain */}
         <div
-          className="absolute inset-0 opacity-15"
+          className="absolute inset-0 card-grain opacity-60"
+          style={{ mixBlendMode: 'overlay' }}
+        />
+
+        {/* Subtle warm center bloom */}
+        <div
+          className="absolute inset-0"
           style={{
-            backgroundImage:
-              'repeating-linear-gradient(-45deg, transparent 0, transparent 14px, rgba(255,255,255,0.07) 14px, rgba(255,255,255,0.07) 28px)',
+            background:
+              'radial-gradient(ellipse at 38% 42%, rgba(255, 215, 150, 0.08) 0%, transparent 55%)',
           }}
         />
 
-        {/* Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />
+        {/* Deep vignette — pulls focus inward */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/25 to-transparent" />
 
-        {/* Emoji */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* Time badge — top right */}
+        <div className="absolute top-3 right-3 z-10">
+          <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-black/65 backdrop-blur-sm text-slap-cream font-body font-semibold text-xs tracking-wide border border-white/10">
+            {recipe.time}
+          </span>
+        </div>
+
+        {/* Emoji — small accent at bottom left */}
+        <div className="absolute bottom-3.5 left-4 z-10">
           <span
-            className="text-7xl select-none drop-shadow-2xl transition-transform duration-300 group-hover:scale-110"
+            className="text-[1.85rem] select-none drop-shadow-lg transition-transform duration-300 group-hover:scale-110 inline-block"
             role="img"
             aria-hidden="true"
           >
@@ -36,34 +50,31 @@ export default function RecipeCard({ recipe }) {
           </span>
         </div>
 
-        {/* Time badge */}
-        <div className="absolute top-4 right-4 z-10">
-          <span className="inline-flex items-center px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-slap-cream font-body font-semibold text-xs tracking-wide border border-white/10">
-            ⏱ {recipe.time}
-          </span>
-        </div>
-
-        {/* Orange bottom accent line */}
-        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-slap-orange via-slap-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Bottom accent line — reveals on hover */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-slap-orange/70 via-slap-gold/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
-      {/* Card Body */}
-      <div className="p-5">
-        <h3 className="font-display text-xl text-slap-cream tracking-wide leading-tight mb-2 group-hover:text-slap-orange transition-colors duration-200">
+      {/* Card body */}
+      <div className="p-5 pt-4">
+        <h3 className="font-display text-xl text-slap-cream tracking-wide leading-snug mb-2 group-hover:text-slap-orange transition-colors duration-200">
           {recipe.title}
         </h3>
-        <p className="font-body text-slap-muted text-sm leading-relaxed mb-4 line-clamp-2">
+
+        {/* Thin accent rule under title */}
+        <div className="w-7 h-px bg-slap-orange/50 mb-3 transition-all duration-300 group-hover:w-14 group-hover:bg-slap-orange/80" />
+
+        <p className="font-body text-slap-muted text-sm leading-relaxed mb-5 line-clamp-2">
           {recipe.hook}
         </p>
 
         <div className="flex items-center justify-between">
-          <span className="font-body text-slap-muted text-xs uppercase tracking-widest">
-            {recipe.servings} {recipe.servings === '1' ? 'serving' : 'servings'}
+          <span className="font-body text-slap-warm/70 text-xs uppercase tracking-widest">
+            {recipe.servings === '1' ? '1 serving' : `${recipe.servings} servings`}
           </span>
-          <span className="inline-flex items-center gap-1.5 font-body font-semibold text-sm text-slap-orange group-hover:text-slap-gold transition-colors duration-200">
-            Go To Recipe
+          <span className="inline-flex items-center gap-1.5 font-body font-bold text-sm text-slap-orange group-hover:text-slap-gold transition-colors duration-200">
+            Make It Slap
             <svg
-              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+              className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
