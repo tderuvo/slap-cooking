@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { SmartRecipeThumb } from './SmartRecipeImage'
 
 export default function RecipeCard({ recipe }) {
   return (
@@ -13,6 +14,14 @@ export default function RecipeCard({ recipe }) {
           background: `linear-gradient(155deg, ${recipe.gradientFrom} 0%, ${recipe.gradientTo} 100%)`,
         }}
       >
+        {/* Recipe photo — renders only when file exists; placeholder shows through otherwise */}
+        <SmartRecipeThumb
+          slug={recipe.slug}
+          title={recipe.title}
+          gradientFrom={recipe.gradientFrom}
+          gradientTo={recipe.gradientTo}
+        />
+
         {/* Fine noise grain */}
         <div
           className="absolute inset-0 card-grain opacity-60"

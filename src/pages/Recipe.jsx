@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { getRecipeBySlug, recipes } from '../data/recipes'
 import { assassinsVariations } from '../data/assassinsVariations'
+import { SmartRecipeHero } from '../components/SmartRecipeImage'
 
 function SectionLabel({ label }) {
   return (
@@ -50,6 +51,9 @@ export default function Recipe() {
           background: `linear-gradient(145deg, ${recipe.gradientFrom} 0%, ${recipe.gradientTo} 60%, #0d0a07 100%)`,
         }}
       >
+        {/* Hero photo — renders only when file exists; gradient/stripe/emoji show through otherwise */}
+        <SmartRecipeHero slug={recipe.slug} title={recipe.title} />
+
         {/* Diagonal stripe overlay */}
         <div
           className="absolute inset-0 opacity-10"
