@@ -17,9 +17,9 @@ export default function RecipeCard({ recipe }) {
         {/* Recipe photo — renders only when file exists; gradient placeholder shows through otherwise */}
         <SmartRecipeThumb slug={recipe.slug} title={recipe.title} />
 
-        {/* Subtle vignette over photos for consistent badge readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
+        {/* Vignette — lighter so cards integrate with the cream page bg */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
 
         {/* Time badge — top right */}
         <div className="absolute top-3 right-3 z-10">
