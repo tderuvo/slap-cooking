@@ -26,27 +26,29 @@ const pillars = [
 export default function About() {
   return (
     <div className="min-h-screen bg-slap-black">
+
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-8 overflow-hidden grain">
+      <section className="relative pt-32 pb-20 px-4 sm:px-8 overflow-hidden">
+        {/* Subtle warm accent */}
         <div
-          className="absolute top-0 right-0 w-[50vw] h-[50vh] opacity-15 pointer-events-none"
+          className="absolute top-0 right-0 w-[40vw] h-[40vh] opacity-30 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at top right, #ff4500, transparent 70%)',
+            background: 'radial-gradient(ellipse at top right, rgba(224,85,0,0.08), transparent 70%)',
           }}
         />
 
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
-            <span className="inline-block w-6 h-0.5 bg-slap-orange" />
+            <span className="inline-block w-6 h-px bg-slap-orange/70" />
             <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
               The concept
             </span>
           </div>
-          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl text-slap-cream leading-none mb-6">
+          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl text-slap-cream leading-tight mb-6">
             Food hacks
             <br />
             without{' '}
-            <span className="text-slap-orange">shame.</span>
+            <span className="italic text-slap-orange">shame.</span>
           </h1>
           <p className="font-body text-xl text-slap-muted max-w-2xl leading-relaxed">
             Slap Cooking exists to prove that you don't need a $300 grocery haul or a culinary school
@@ -60,12 +62,12 @@ export default function About() {
         <div className="max-w-5xl mx-auto">
 
           {/* Big statement */}
-          <div className="relative overflow-hidden rounded-3xl p-8 sm:p-12 mb-16 bg-slap-card border border-white/5">
+          <div className="relative overflow-hidden rounded-2xl p-8 sm:p-12 mb-16 bg-slap-char border border-slap-smoke">
             <div
-              className="absolute top-0 left-0 w-full h-1 opacity-60"
-              style={{ background: 'linear-gradient(to right, #ff4500, #f5a623, transparent)' }}
+              className="absolute top-0 left-0 right-0 h-1 opacity-60 rounded-t-2xl"
+              style={{ background: 'linear-gradient(to right, #e05500, #c07800, transparent)' }}
             />
-            <p className="font-display text-3xl sm:text-4xl md:text-5xl text-slap-cream leading-snug">
+            <p className="font-display italic text-3xl sm:text-4xl md:text-5xl text-slap-cream leading-snug">
               "This had no business
               <br />
               tasting this{' '}
@@ -77,14 +79,14 @@ export default function About() {
           </div>
 
           {/* Pillars */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-16">
             {pillars.map((p, i) => (
               <div
                 key={i}
-                className="bg-slap-card border border-white/5 hover:border-slap-orange/20 rounded-2xl p-7 transition-colors duration-300"
+                className="bg-white border border-slap-smoke hover:border-slap-orange/25 rounded-2xl p-7 transition-colors duration-300"
               >
                 <div className="text-3xl mb-4">{p.icon}</div>
-                <h3 className="font-display text-xl text-slap-cream mb-3 tracking-wide">{p.headline}</h3>
+                <h3 className="font-display text-xl text-slap-cream mb-3">{p.headline}</h3>
                 <p className="font-body text-slap-muted text-sm leading-relaxed">{p.body}</p>
               </div>
             ))}
@@ -93,7 +95,7 @@ export default function About() {
           {/* What we are not */}
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-6">
-              <span className="inline-block w-5 h-0.5 bg-slap-orange" />
+              <span className="inline-block w-5 h-px bg-slap-orange/70" />
               <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
                 Let's be clear
               </span>
@@ -117,13 +119,13 @@ export default function About() {
           </div>
 
           {/* CTA */}
-          <div className="text-center pt-8 border-t border-white/5">
+          <div className="text-center pt-8 border-t border-slap-smoke">
             <p className="font-body text-slap-muted mb-6">
               That's enough talking. Go make something that slaps.
             </p>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slap-orange hover:bg-slap-deep text-slap-cream font-body font-bold text-base tracking-wide transition-all duration-200 hover:scale-105 active:scale-95 shadow-xl shadow-slap-orange/25"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slap-orange hover:bg-slap-ember text-white font-body font-bold text-base tracking-wide transition-all duration-200 hover:scale-105 active:scale-95 shadow-[0_4px_20px_rgba(224,85,0,0.20)]"
             >
               See The Recipes
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

@@ -4,7 +4,7 @@ import { assassinsVariations } from '../data/assassinsVariations'
 function SectionLabel({ label }) {
   return (
     <div className="flex items-center gap-3 mb-3">
-      <span className="inline-block w-5 h-px bg-slap-orange flex-shrink-0 opacity-80" />
+      <span className="inline-block w-5 h-px bg-slap-orange/70 flex-shrink-0" />
       <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
         {label}
       </span>
@@ -16,29 +16,28 @@ export default function AssassinVariations() {
   return (
     <div className="min-h-screen bg-slap-black">
 
-      {/* ──────────── HERO ──────────── */}
-      <div
-        className="relative flex flex-col justify-end grain overflow-hidden"
-        style={{
-          minHeight: '36vh',
-          background: 'linear-gradient(145deg, #5c0f0f 0%, #b83200 60%, #0d0a07 100%)',
-        }}
-      >
-        {/* Fine diagonal texture */}
+      {/* ──────────── HEADER ──────────── */}
+      <div className="relative bg-slap-black overflow-hidden">
+
+        {/* Colored accent strip — uses Assassin's Penne palette */}
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute top-0 left-0 right-0 h-1.5"
+          style={{ background: 'linear-gradient(to right, #5c0f0f, #b83200)' }}
+        />
+
+        {/* Subtle warm tint */}
+        <div
+          className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage:
-              'repeating-linear-gradient(-45deg, transparent 0, transparent 16px, rgba(255,255,255,0.06) 16px, rgba(255,255,255,0.06) 32px)',
+            background: 'radial-gradient(ellipse at 75% 50%, rgba(184,50,0,0.06) 0%, transparent 65%)',
           }}
         />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slap-black to-transparent" />
 
         {/* Back link */}
-        <div className="absolute top-24 left-0 right-0 px-4 sm:px-8 max-w-3xl mx-auto w-full">
+        <div className="absolute top-20 left-0 right-0 px-4 sm:px-8 max-w-3xl mx-auto w-full">
           <Link
             to="/recipes/assassins-penne"
-            className="inline-flex items-center gap-2 font-body text-sm text-white/60 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 font-body text-sm text-slap-muted hover:text-slap-cream transition-colors"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -48,21 +47,21 @@ export default function AssassinVariations() {
         </div>
 
         {/* Ghost emoji */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-          <span className="text-[11rem] select-none">🍝</span>
+        <div className="absolute inset-0 flex items-center justify-end pr-8 opacity-[0.04] pointer-events-none select-none">
+          <span className="text-[14rem]">🍝</span>
         </div>
 
-        <div className="relative z-10 max-w-3xl mx-auto w-full px-4 sm:px-8 pb-10 pt-32">
+        <div className="relative z-10 max-w-3xl mx-auto w-full px-4 sm:px-8 pb-10 pt-36">
           <div className="flex items-center gap-3 mb-4">
-            <span className="inline-block w-5 h-px bg-slap-orange opacity-80" />
+            <span className="inline-block w-5 h-px bg-slap-orange/70" />
             <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
               Assassin's Penne
             </span>
           </div>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-slap-cream leading-none mb-3 text-shadow-lg">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-slap-cream leading-tight mb-3">
             More Slaps
           </h1>
-          <p className="font-body text-white/65 text-lg leading-relaxed">
+          <p className="font-body text-slap-muted text-lg leading-relaxed">
             Same frozen pasta. Different levels of trouble.
           </p>
         </div>
@@ -75,10 +74,10 @@ export default function AssassinVariations() {
           <div key={v.id}>
             {/* Number + name */}
             <div className="flex items-baseline gap-4 mb-2">
-              <span className="font-display text-slap-orange/35 text-3xl leading-none select-none">
+              <span className="font-display text-slap-orange/25 text-3xl leading-none select-none">
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <h2 className="font-display text-4xl sm:text-5xl text-slap-cream leading-none">
+              <h2 className="font-display text-4xl sm:text-5xl text-slap-cream leading-tight">
                 {v.name}
               </h2>
             </div>
@@ -95,7 +94,7 @@ export default function AssassinVariations() {
                 <ul className="space-y-2">
                   {v.add.map((item, j) => (
                     <li key={j} className="flex items-start gap-3 font-body text-slap-muted text-base">
-                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-slap-orange/60 flex-shrink-0" />
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-slap-orange/50 flex-shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -111,8 +110,8 @@ export default function AssassinVariations() {
               </div>
 
               {/* Final Slap */}
-              <div className="pl-4 border-l-2 border-slap-orange/50 py-1">
-                <p className="font-display text-2xl text-slap-cream">
+              <div className="pl-4 border-l-2 border-slap-orange/40 py-1">
+                <p className="font-display italic text-2xl text-slap-cream">
                   {v.finalSlap}
                 </p>
               </div>
@@ -120,22 +119,22 @@ export default function AssassinVariations() {
 
             {/* Separator between variations */}
             {i < assassinsVariations.length - 1 && (
-              <div className="mt-16 border-t border-white/5" />
+              <div className="mt-16 border-t border-slap-smoke" />
             )}
           </div>
         ))}
 
         {/* Bottom nav */}
-        <div className="border-t border-white/5 pt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="border-t border-slap-smoke pt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <p className="font-body text-slap-muted text-xs uppercase tracking-widest mb-1">
+            <p className="font-body text-slap-warm text-xs uppercase tracking-widest mb-1">
               Start here first
             </p>
             <p className="font-display text-xl text-slap-cream">Assassin's Penne</p>
           </div>
           <Link
             to="/recipes/assassins-penne"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-slap-orange hover:bg-slap-ember text-slap-cream font-body font-semibold text-sm tracking-wide transition-all duration-200 hover:scale-[1.03] active:scale-95 shadow-[0_4px_20px_rgba(180,60,0,0.28)]"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slap-orange hover:bg-slap-ember text-white font-body font-semibold text-sm tracking-wide transition-all duration-200 hover:scale-[1.03] active:scale-95"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
 /**
- * Tries to load a recipe image. On error (file not found), renders null
- * so the parent's existing placeholder treatment shows through unchanged.
+ * Card thumbnail — tries to load thumb.png, renders null on error so the
+ * parent's gradient placeholder shows through unchanged.
  */
-export function SmartRecipeThumb({ slug, title, gradientFrom, gradientTo }) {
+export function SmartRecipeThumb({ slug, title }) {
   const [failed, setFailed] = useState(false)
   const src = `/images/recipes/${slug}/thumb.png`
 
@@ -22,8 +22,8 @@ export function SmartRecipeThumb({ slug, title, gradientFrom, gradientTo }) {
 }
 
 /**
- * Tries to load a recipe hero image. On error, renders null so the
- * parent's existing gradient/stripe/emoji treatment shows through.
+ * Recipe detail hero photo — self-contained section that renders nothing when
+ * the image doesn't exist, so the title area above is always clean and light.
  */
 export function SmartRecipeHero({ slug, title }) {
   const [failed, setFailed] = useState(false)
@@ -32,19 +32,14 @@ export function SmartRecipeHero({ slug, title }) {
   if (failed) return null
 
   return (
-    <>
+    <div className="w-full overflow-hidden" style={{ maxHeight: '520px' }}>
       <img
         src={src}
-        alt={`${title} hero`}
+        alt={`${title} — Slap Cooking recipe`}
         onError={() => setFailed(true)}
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0 }}
+        className="w-full object-cover"
+        style={{ maxHeight: '520px' }}
       />
-      {/* Dark overlay so title text stays readable over any photo */}
-      <div
-        className="absolute inset-0"
-        style={{ background: 'rgba(0,0,0,0.52)', zIndex: 1 }}
-      />
-    </>
+    </div>
   )
 }

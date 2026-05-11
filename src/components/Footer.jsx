@@ -2,15 +2,19 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="bg-slap-dark border-t border-white/5 mt-24">
+    <footer className="bg-slap-dark border-t border-slap-smoke mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
 
           {/* Logo */}
           <Link to="/" className="group">
-            <span className="font-display text-xl tracking-wider">
-              <span className="text-slap-orange group-hover:text-slap-gold transition-colors">SLAP</span>
-              <span className="text-slap-cream ml-1"> COOKING</span>
+            <span className="font-display text-lg leading-none">
+              <span className="italic font-bold text-slap-orange group-hover:text-slap-ember transition-colors">
+                Slap
+              </span>
+              <span className="font-body font-semibold text-slap-cream ml-1.5">
+                Cooking
+              </span>
             </span>
           </Link>
 
@@ -48,8 +52,8 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-white/5 text-center">
-          <p className="font-display text-slap-muted/40 text-xs tracking-widest uppercase">
+        <div className="mt-8 pt-8 border-t border-slap-smoke text-center">
+          <p className="font-body text-slap-warm text-xs tracking-widest uppercase">
             No food snobbery. No shame. Just meals that hit.
           </p>
         </div>

@@ -5,28 +5,26 @@ export default {
     extend: {
       colors: {
         slap: {
-          black:  '#0d0a07',
-          dark:   '#1a1510',
-          card:   '#1c1710',
-          char:   '#231c12',
-          smoke:  '#141009',
-          orange: '#ff4500',
-          ember:  '#c13a00',
-          deep:   '#cc3700',
-          gold:   '#f5a623',
-          amber:  '#d4820a',
-          cream:  '#faf5ee',
-          muted:  '#b5a898',
-          warm:   '#8a7060',
-          red:    '#e8271a',
+          // Light-mode semantic tokens (inverted from original dark theme)
+          black:  '#faf8f5',   // page background — warm white
+          dark:   '#f0ebe5',   // footer / alt-section background
+          card:   '#ffffff',   // card / surface background
+          char:   '#faf6f2',   // callout box background
+          smoke:  '#e5dfd8',   // border color
+          orange: '#e05500',   // primary accent
+          ember:  '#c14800',   // hover accent
+          deep:   '#b83200',   // active / pressed
+          gold:   '#c07800',   // amber gold (darkened for white-bg contrast)
+          amber:  '#a06000',   // deep amber
+          cream:  '#1c1917',   // primary text (inverted — was light cream, now near-black)
+          muted:  '#6b6460',   // secondary text
+          warm:   '#9e8f85',   // tertiary / placeholder text
+          red:    '#c41c10',   // red accent
         },
       },
       fontFamily: {
-        display: ['Anton', 'sans-serif'],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
         body:    ['DM Sans', 'sans-serif'],
-      },
-      backgroundImage: {
-        'noise': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E\")",
       },
     },
   },

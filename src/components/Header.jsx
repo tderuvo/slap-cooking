@@ -20,14 +20,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-slap-black/95 backdrop-blur-md border-b border-white/5 shadow-2xl'
-          : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-200 border-b ${
+        scrolled ? 'border-slap-smoke shadow-sm' : 'border-slap-smoke/60'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-18">
 
           {/* Logo */}
           <Link
@@ -35,11 +33,13 @@ export default function Header() {
             className="flex-shrink-0 group"
             aria-label="Slap Cooking home"
           >
-            <span className="font-display text-2xl md:text-3xl tracking-wider">
-              <span className="text-slap-orange group-hover:text-slap-gold transition-colors duration-200">
-                SLAP
+            <span className="font-display text-xl md:text-2xl leading-none">
+              <span className="italic font-bold text-slap-orange group-hover:text-slap-ember transition-colors duration-200">
+                Slap
               </span>
-              <span className="text-slap-cream ml-1.5">COOKING</span>
+              <span className="font-body font-semibold text-slap-cream ml-1.5 text-lg md:text-xl">
+                Cooking
+              </span>
             </span>
           </Link>
 
@@ -47,21 +47,21 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8">
             <a
               href={recipesHref}
-              className="font-body font-medium text-slap-muted hover:text-slap-cream transition-colors duration-200 text-sm tracking-wide uppercase"
+              className="font-body font-medium text-slap-muted hover:text-slap-cream transition-colors duration-200 text-sm"
             >
               Recipes
             </a>
             <Link
               to="/about"
-              className="font-body font-medium text-slap-muted hover:text-slap-cream transition-colors duration-200 text-sm tracking-wide uppercase"
+              className="font-body font-medium text-slap-muted hover:text-slap-cream transition-colors duration-200 text-sm"
             >
               About
             </Link>
             <a
               href={recipesHref}
-              className="inline-flex items-center px-5 py-2.5 rounded-full bg-slap-orange hover:bg-slap-deep text-slap-cream font-body font-semibold text-sm tracking-wide transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg shadow-slap-orange/20"
+              className="inline-flex items-center px-5 py-2 rounded-full bg-slap-orange hover:bg-slap-ember text-white font-body font-semibold text-sm transition-all duration-200 hover:scale-[1.03] active:scale-95"
             >
-              Start Slapping
+              Browse Recipes
             </a>
           </nav>
 
@@ -86,24 +86,24 @@ export default function Header() {
           menuOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-slap-dark border-t border-white/5 px-4 py-6 flex flex-col gap-4">
+        <div className="bg-white border-t border-slap-smoke px-4 py-6 flex flex-col gap-4">
           <a
             href={recipesHref}
-            className="font-body font-medium text-slap-muted hover:text-slap-cream text-sm tracking-widest uppercase"
+            className="font-body font-medium text-slap-muted hover:text-slap-cream text-sm"
           >
             Recipes
           </a>
           <Link
             to="/about"
-            className="font-body font-medium text-slap-muted hover:text-slap-cream text-sm tracking-widest uppercase"
+            className="font-body font-medium text-slap-muted hover:text-slap-cream text-sm"
           >
             About
           </Link>
           <a
             href={recipesHref}
-            className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-slap-orange hover:bg-slap-deep text-slap-cream font-body font-semibold text-sm tracking-wide transition-colors mt-2"
+            className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-slap-orange hover:bg-slap-ember text-white font-body font-semibold text-sm transition-colors mt-2"
           >
-            Start Slapping
+            Browse Recipes
           </a>
         </div>
       </div>

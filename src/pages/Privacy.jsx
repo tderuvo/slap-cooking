@@ -6,7 +6,7 @@ export default function Privacy() {
         {/* Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <span className="inline-block w-5 h-0.5 bg-slap-orange" />
+            <span className="inline-block w-5 h-px bg-slap-orange/70" />
             <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
               Legal
             </span>
@@ -36,7 +36,7 @@ export default function Privacy() {
                 'Cookies: small data files stored on your device to improve site performance and remember preferences.',
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-slap-orange flex-shrink-0" />
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-slap-orange/60 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -54,7 +54,7 @@ export default function Privacy() {
                 'Comply with applicable legal obligations.',
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-slap-orange flex-shrink-0" />
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-slap-orange/60 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -117,7 +117,9 @@ export default function Privacy() {
             <h2 className="font-display text-2xl text-slap-cream mb-3">Contact</h2>
             <p>
               Questions about this Privacy Policy? Reach us at{' '}
-              <span className="text-slap-orange">hello@slapcooking.com</span>
+              <a href="mailto:hello@slapcooking.com" className="text-slap-orange hover:text-slap-ember transition-colors">
+                hello@slapcooking.com
+              </a>
             </p>
           </section>
         </div>
