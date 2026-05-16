@@ -105,6 +105,17 @@ export default function Recipe() {
       {/* ──────────────── CONTENT ──────────────── */}
       <div className="max-w-3xl mx-auto px-4 sm:px-8 py-16 space-y-14">
 
+        {/* Intro copy (optional per recipe) */}
+        {recipe.intro && (
+          <div>
+            {recipe.intro.split('\n\n').map((paragraph, i) => (
+              <p key={i} className="font-body text-slap-muted leading-relaxed text-base mb-4 last:mb-0">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        )}
+
         {/* The Shortcut */}
         <div>
           <SectionLabel label="The Shortcut" />
@@ -186,47 +197,112 @@ export default function Recipe() {
           </p>
         </div>
 
-        {/* ──── More Slaps (Assassin's Penne only) ──── */}
+        {/* ──── Assassin's Penne: SEO + brand sections ──── */}
         {slug === 'assassins-penne' && (
-          <div>
-            <div className="flex items-center gap-3 mb-2">
-              <span className="inline-block w-5 h-px bg-slap-orange opacity-70 flex-shrink-0" />
-              <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
-                More Slaps
-              </span>
-            </div>
-            <p className="font-body text-slap-muted text-sm mb-6">
-              Same shortcut. Different damage.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-              {assassinsVariations.map((v) => (
-                <Link
-                  key={v.id}
-                  to="/recipes/assassins-penne/variations"
-                  className="group relative bg-white rounded-xl border border-slap-smoke hover:border-slap-orange/30 p-4 overflow-hidden transition-all duration-200 hover:shadow-sm"
-                >
-                  <div className="absolute left-0 top-3 bottom-3 w-0.5 bg-slap-orange/50 rounded-r-full" />
-                  <h4 className="font-display text-base text-slap-cream mb-1.5 group-hover:text-slap-orange transition-colors duration-200">
-                    {v.name}
-                  </h4>
-                  <p className="font-body text-slap-muted text-xs leading-relaxed">
-                    {v.teaser}
-                  </p>
-                </Link>
-              ))}
+          <>
+            {/* Can I Use Spaghetti Instead of Penne? */}
+            <div>
+              <h2 className="font-display text-3xl text-slap-cream mb-4">Can I Use Spaghetti Instead of Penne?</h2>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-4">
+                Yes — and spaghetti all'assassina is actually the more traditional reference. The classic Bari version is almost always long pasta: strands that stick, char, and pull up in dramatic clumps from the pan. That's the original move.
+              </p>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-4">
+                This SlapCooking version uses penne because each piece chars individually, the sauce gets trapped inside the tubes, and the whole thing is easier to handle without a tong situation. Chunkier. Different kind of fun.
+              </p>
+              <p className="font-body text-slap-muted leading-relaxed text-base">
+                Other short pasta like rigatoni, ziti, or paccheri can work too. Just know that cooking times and sauce absorption will shift — watch your liquid levels and adjust as you go.
+              </p>
             </div>
 
-            <Link
-              to="/recipes/assassins-penne/variations"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-slap-orange/40 text-slap-orange hover:bg-slap-orange hover:text-white font-body font-semibold text-sm tracking-wide transition-all duration-200"
-            >
-              See All Assassin Variations
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
-          </div>
+            {/* What Makes Pasta all'Assassina Different? */}
+            <div>
+              <h2 className="font-display text-3xl text-slap-cream mb-4">What Makes Pasta all'Assassina Different?</h2>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-4">
+                The pasta doesn't get boiled separately first — not the usual way, anyway. You cook it directly in the pan with tomato sauce and broth added in stages. The pasta absorbs the liquid as it goes, and you're going for controlled sticking, crisping, and a little caramelization against the hot pan surface.
+              </p>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-4">
+                The slightly charred bits are not a mistake. They are the point. That's the assassin.
+              </p>
+              <p className="font-body text-slap-muted leading-relaxed text-base">
+                The flavor payoff: spicy from the chili, smoky from the sear, tomato-rich from the sauce, slightly charred from the pan. It's aggressive in the best possible way. Hence the name.
+              </p>
+            </div>
+
+            {/* More Slaps / Variations */}
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="inline-block w-5 h-px bg-slap-orange opacity-70 flex-shrink-0" />
+                <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
+                  More Slaps
+                </span>
+              </div>
+              <p className="font-body text-slap-muted text-sm mb-6">
+                Same shortcut. Different damage.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                {assassinsVariations.map((v) => (
+                  <Link
+                    key={v.id}
+                    to="/recipes/assassins-penne/variations"
+                    className="group relative bg-white rounded-xl border border-slap-smoke hover:border-slap-orange/30 p-4 overflow-hidden transition-all duration-200 hover:shadow-sm"
+                  >
+                    <div className="absolute left-0 top-3 bottom-3 w-0.5 bg-slap-orange/50 rounded-r-full" />
+                    <h4 className="font-display text-base text-slap-cream mb-1.5 group-hover:text-slap-orange transition-colors duration-200">
+                      {v.name}
+                    </h4>
+                    <p className="font-body text-slap-muted text-xs leading-relaxed">
+                      {v.teaser}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+
+              <Link
+                to="/recipes/assassins-penne/variations"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-slap-orange/40 text-slap-orange hover:bg-slap-orange hover:text-white font-body font-semibold text-sm tracking-wide transition-all duration-200"
+              >
+                See All Assassin Variations
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </div>
+
+            {/* More SlapCooking Recipes */}
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="inline-block w-5 h-px bg-slap-orange opacity-70 flex-shrink-0" />
+                <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
+                  More SlapCooking Recipes
+                </span>
+              </div>
+              <p className="font-body text-slap-muted text-sm mb-6">
+                Keep the momentum going.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {[
+                  { slug: 'crispy-gnocchi-situation', label: 'Crispy Gnocchi Situation', desc: "Don't boil it. Pan-fry it. Then make it saucy." },
+                  { slug: 'lazy-day-carbonara-ish', label: 'Lazy Day Carbonara-ish', desc: 'Creamy, peppery, fake-fancy pasta energy with almost no effort.' },
+                  { slug: 'fried-rice-gone-wild', label: 'Fried Rice Gone Wild', desc: 'A freezer-bag classic with egg, crunch, heat, and late-night flavor.' },
+                ].map((r) => (
+                  <Link
+                    key={r.slug}
+                    to={`/recipes/${r.slug}`}
+                    className="group relative bg-slap-char rounded-xl border border-slap-smoke hover:border-slap-orange/30 p-4 overflow-hidden transition-all duration-200"
+                  >
+                    <div className="absolute left-0 top-3 bottom-3 w-0.5 bg-slap-orange/50 rounded-r-full" />
+                    <h4 className="font-display text-base text-slap-cream mb-1.5 group-hover:text-slap-orange transition-colors duration-200">
+                      {r.label}
+                    </h4>
+                    <p className="font-body text-slap-muted text-xs leading-relaxed">
+                      {r.desc}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </>
         )}
 
         {/* Next Recipe CTA */}
