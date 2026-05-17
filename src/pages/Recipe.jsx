@@ -435,6 +435,170 @@ export default function Recipe() {
           </>
         )}
 
+        {/* ──── Midnight Mac Attack: SEO + brand sections ──── */}
+        {slug === 'midnight-mac-attack' && (
+          <>
+            {/* What Makes This Mac and Cheese Spicy? */}
+            <div>
+              <h2 className="font-display text-3xl text-slap-cream mb-4">What Makes This Mac and Cheese Spicy?</h2>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-5">
+                A few things working together — and you control the stack:
+              </p>
+              <div className="space-y-3">
+                {[
+                  ['Chili crisp', 'the star. A spoonful stirred in adds heat, garlic, and a slightly funky depth that changes the whole dish. Start with one teaspoon, taste, go from there.'],
+                  ['Hot sauce', 'classic route. Cholula, Tabasco, Frank\'s — anything works and keeps the heat clean and direct.'],
+                  ['Black pepper', 'underrated heat source. Go heavy, go fresh-cracked. This is not a one-twist situation.'],
+                  ['Cayenne or red pepper flakes', 'if you want direct heat without complexity. Add a pinch at the end.'],
+                ].map(([item, desc]) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-slap-orange/60 flex-shrink-0" aria-hidden="true" />
+                    <p className="font-body text-slap-muted text-base leading-relaxed">
+                      <span className="text-slap-cream font-medium">{item}</span> — {desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="font-body text-slap-muted text-sm mt-5 leading-relaxed">
+                Want it mild? Skip the chili crisp and go light on pepper. Want it loud? Stack all four. The recipe holds up either way.
+              </p>
+            </div>
+
+            {/* Best Cheese for Creamy Mac and Cheese */}
+            <div>
+              <h2 className="font-display text-3xl text-slap-cream mb-4">Best Cheese for Creamy Mac and Cheese</h2>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-5">
+                The box gives you a base. The real cheese you stir in while it's hot is what makes it creamy mac and cheese instead of just mac and cheese.
+              </p>
+              <div className="space-y-3">
+                {[
+                  ['Sharp cheddar', 'melts well, strong flavor, the obvious and correct choice'],
+                  ['Monterey Jack', 'creamy and smooth with a milder flavor — blends beautifully into the sauce'],
+                  ['Mozzarella', 'adds extra stretch and pull, great for dramatic texture'],
+                  ['American cheese', 'secretly the best for ultra-smooth, glossy melt. One slice stirred in while everything is hot will change your opinion of American cheese.'],
+                ].map(([item, desc]) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-slap-orange/60 flex-shrink-0" aria-hidden="true" />
+                    <p className="font-body text-slap-muted text-base leading-relaxed">
+                      <span className="text-slap-cream font-medium">{item}</span> — {desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="font-body text-slap-muted text-sm mt-5 leading-relaxed">
+                Mixing cheeses is always the move. Cheddar for flavor, Jack or American for silky texture. Don't choose — use both.
+              </p>
+            </div>
+
+            {/* Stovetop vs Baked Mac and Cheese */}
+            <div>
+              <h2 className="font-display text-3xl text-slap-cream mb-4">Stovetop vs Baked Mac and Cheese</h2>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-4">
+                Baked mac has its place. Crispy top, deep dish vibes, the whole thing. But baked mac takes time, more dishes, and patience you don't have at midnight.
+              </p>
+              <div className="space-y-4">
+                <div className="bg-slap-char rounded-xl p-5 border border-slap-smoke">
+                  <p className="font-body text-slap-cream font-semibold text-sm mb-1">Stovetop</p>
+                  <p className="font-body text-slap-muted text-sm leading-relaxed">
+                    Fast, creamy, and done in 15 minutes with one pot. This is the move for quick comfort food. No oven, no waiting, no second pan. The crunch comes from crispy shallots on top instead — same texture payoff, fraction of the effort. This is what the Midnight Mac Attack is built for. For more one-pan crispy comfort, see <Link to="/recipes/crispy-gnocchi-situation" className="text-slap-orange hover:underline">Crispy Gnocchi Situation</Link>.
+                  </p>
+                </div>
+                <div className="bg-slap-char rounded-xl p-5 border border-slap-smoke">
+                  <p className="font-body text-slap-cream font-semibold text-sm mb-1">Baked</p>
+                  <p className="font-body text-slap-muted text-sm leading-relaxed">
+                    Better crust on top, more structure, feeds a crowd well. Takes 30–45 minutes total and requires an oven-safe dish. Worth it on a Sunday. Not what this recipe is.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Easy Upgrades */}
+            <div>
+              <h2 className="font-display text-3xl text-slap-cream mb-4">Easy Upgrades</h2>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-5">
+                The box is the shortcut. These are the moves that make it yours.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  ['Chili crisp', 'non-negotiable if you want heat and depth'],
+                  ['Crispy breadcrumbs', 'toast them in butter first, pile on top — instant texture'],
+                  ['Scallions', 'sliced thin, piled on, not a garnish'],
+                  ['Bacon or pancetta', 'crisp it first, crumble it in — for when mac becomes a meal'],
+                  ['Roasted garlic', 'stir a clove or two directly into the sauce while hot'],
+                  ['Extra black pepper', 'more than you think. Keep going.'],
+                  ['Parmesan', 'grated fresh on top — adds salt and sharpness at the finish'],
+                ].map(([item, desc]) => (
+                  <li key={item} className="flex items-start gap-3 font-body text-slap-muted">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-slap-orange/60 flex-shrink-0" aria-hidden="true" />
+                    <span className="text-base"><span className="text-slap-cream font-medium">{item}</span> — {desc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Make It Your Own */}
+            <div>
+              <h2 className="font-display text-3xl text-slap-cream mb-4">Make It Your Own</h2>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-5">
+                This recipe is a canvas. Here's where it can go:
+              </p>
+              <div className="space-y-3">
+                {[
+                  ['Extra spicy', 'double the chili crisp, add cayenne, don\'t be polite about it'],
+                  ['Milder version', 'skip the chili crisp entirely, lean on smoked paprika and black pepper for warmth without fire'],
+                  ['Protein add-ins', 'crispy chicken, canned tuna, pulled rotisserie chicken — fold it in while the mac is still hot'],
+                  ['Veggie add-ins', 'frozen peas, roasted broccoli, sautéed mushrooms — stir them in at the end'],
+                  ['Leftover reheating', 'add a splash of milk and heat low and slow on the stovetop. Don\'t microwave it dry.'],
+                ].map(([label, desc]) => (
+                  <div key={label} className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-slap-orange/60 flex-shrink-0" aria-hidden="true" />
+                    <p className="font-body text-slap-muted text-base leading-relaxed">
+                      <span className="text-slap-cream font-medium">{label}</span> — {desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="font-body text-slap-muted text-sm mt-5 leading-relaxed">
+                Into late-night crispy comfort food? <Link to="/recipes/orange-chicken-after-dark" className="text-slap-orange hover:underline">Orange Chicken After Dark</Link> has the same energy. Want a spicy pasta recipe instead? <Link to="/recipes/assassins-penne" className="text-slap-orange hover:underline">Penne all'Assassina</Link> is the move.
+              </p>
+            </div>
+
+            {/* More SlapCooking Recipes */}
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="inline-block w-5 h-px bg-slap-orange opacity-70 flex-shrink-0" />
+                <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
+                  More SlapCooking Recipes
+                </span>
+              </div>
+              <p className="font-body text-slap-muted text-sm mb-6">
+                Keep the momentum going.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {[
+                  { slug: 'orange-chicken-after-dark', label: "Trader Joe's Orange Chicken After Dark", desc: 'Crispy, spicy, sesame-hit late-night comfort food.' },
+                  { slug: 'assassins-penne', label: "Penne all'Assassina", desc: 'Crispy spicy tomato pasta. Bari-style assassin energy.' },
+                  { slug: 'crispy-gnocchi-situation', label: 'Crispy Gnocchi Situation', desc: "Don't boil it. Pan-fry it. Then make it saucy." },
+                ].map((r) => (
+                  <Link
+                    key={r.slug}
+                    to={`/recipes/${r.slug}`}
+                    className="group relative bg-slap-char rounded-xl border border-slap-smoke hover:border-slap-orange/30 p-4 overflow-hidden transition-all duration-200"
+                  >
+                    <div className="absolute left-0 top-3 bottom-3 w-0.5 bg-slap-orange/50 rounded-r-full" />
+                    <h4 className="font-display text-base text-slap-cream mb-1.5 group-hover:text-slap-orange transition-colors duration-200">
+                      {r.label}
+                    </h4>
+                    <p className="font-body text-slap-muted text-xs leading-relaxed">
+                      {r.desc}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+
         {/* Next Recipe CTA */}
         <div className="border-t border-slap-smoke pt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
