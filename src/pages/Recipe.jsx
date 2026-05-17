@@ -60,16 +60,16 @@ export default function Recipe() {
           }}
         />
 
-        {/* Back link */}
-        <div className="absolute top-20 left-0 right-0 px-4 sm:px-8 max-w-5xl mx-auto w-full">
+        {/* Back link — z-20 keeps it above the z-10 header text container */}
+        <div className="absolute z-20 top-20 left-0 right-0 px-4 sm:px-8 max-w-5xl mx-auto w-full">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 font-body text-sm text-slap-muted hover:text-slap-cream transition-colors"
+            className="inline-flex items-center gap-2 font-body text-sm text-slap-muted hover:text-slap-cream transition-colors cursor-pointer"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
-            All Recipes
+            Back to All Recipes
           </Link>
         </div>
 
