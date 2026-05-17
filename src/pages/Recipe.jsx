@@ -305,6 +305,136 @@ export default function Recipe() {
           </>
         )}
 
+        {/* ──── Orange Chicken After Dark: SEO + brand sections ──── */}
+        {slug === 'orange-chicken-after-dark' && (
+          <>
+            {/* Why Trader Joe's Orange Chicken Works So Well */}
+            <div>
+              <h2 className="font-display text-3xl text-slap-cream mb-4">Why Trader Joe's Orange Chicken Works So Well</h2>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-4">
+                A few reasons this one is hard to beat. The sauce is actually balanced — sweet without being cloying, citrus-forward, just enough acidity. You're not fighting it, you're building on top of it.
+              </p>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-4">
+                The chicken pieces are sized right for crisping. In an air fryer at 400°F or a hot skillet, the exterior gets genuinely crunchy while the inside stays juicy. It's a texture win that most frozen chicken doesn't give you.
+              </p>
+              <p className="font-body text-slap-muted leading-relaxed text-base">
+                And it moves fast. Freezer to plate in under 20 minutes. For an easy weeknight dinner that doesn't feel like a compromise, that's a hard number to argue with. The key: hit it with sesame oil while it's still steaming hot. That's the whole upgrade right there.
+              </p>
+            </div>
+
+            {/* Air Fryer vs Skillet */}
+            <div>
+              <h2 className="font-display text-3xl text-slap-cream mb-4">Air Fryer vs Skillet</h2>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-4">
+                Both work. Both are good. Different results.
+              </p>
+              <div className="space-y-4">
+                <div className="flex gap-3 bg-slap-char rounded-xl p-5 border border-slap-smoke">
+                  <div>
+                    <p className="font-body text-slap-cream font-semibold text-sm mb-1">Air Fryer</p>
+                    <p className="font-body text-slap-muted text-sm leading-relaxed">
+                      Easiest path to even, all-over crispiness. 400°F, one layer, shake once halfway through. The exterior gets genuinely crunchy with almost no effort. This is the move if you want low-maintenance and maximum crunch.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3 bg-slap-char rounded-xl p-5 border border-slap-smoke">
+                  <div>
+                    <p className="font-body text-slap-cream font-semibold text-sm mb-1">Skillet</p>
+                    <p className="font-body text-slap-muted text-sm leading-relaxed">
+                      More caramelization, more char, more flavor depth. High heat, a little oil in the pan, and you're actively building a crust. The sauce that hits the pan gets slightly sticky and dark. More work, more drama, and if you're into crispy cooking, this is the move. See also: <Link to="/recipes/crispy-gnocchi-situation" className="text-slap-orange hover:underline">Crispy Gnocchi Situation</Link> for the same high-heat, pan-crisp approach.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Easy Upgrades */}
+            <div>
+              <h2 className="font-display text-3xl text-slap-cream mb-4">Easy Upgrades</h2>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-5">
+                The base bag is already solid. These make it something you'd actually brag about.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  ['Chili crisp', 'a spoonful turns the sweetness into something complex and dangerous'],
+                  ['Garlic', 'mince it and sauté in the skillet before the chicken hits'],
+                  ['Scallions', 'pile them on — not a garnish, a component'],
+                  ['Sesame oil', 'drizzle it on hot, right off the heat. Non-negotiable.'],
+                  ['Orange zest', 'grate it fresh over the finished plate for brightness'],
+                  ['Crushed roasted peanuts', 'crunch on top of crunch'],
+                  ['Jasmine rice', 'the only correct base'],
+                ].map(([item, desc]) => (
+                  <li key={item} className="flex items-start gap-3 font-body text-slap-muted">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-slap-orange/60 flex-shrink-0" aria-hidden="true" />
+                    <span className="text-base"><span className="text-slap-cream font-medium">{item}</span> — {desc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Make It Your Own */}
+            <div>
+              <h2 className="font-display text-3xl text-slap-cream mb-4">Make It Your Own</h2>
+              <p className="font-body text-slap-muted leading-relaxed text-base mb-5">
+                Orange Chicken After Dark is a strong starting point. Here's where it can go:
+              </p>
+              <div className="space-y-3">
+                {[
+                  ['Extra spicy', 'double the chili crisp, add a few drops of your hottest hot sauce. It holds up.'],
+                  ['Lighter sauce', 'use only half the included sauce and finish with fresh lime juice instead.'],
+                  ['Rice bowl', 'add cucumbers, pickled red onion, and sriracha mayo on the side.'],
+                  ['Lettuce wraps', 'skip the rice, use butter lettuce cups, top with crushed peanuts and fresh herbs.'],
+                  ['Noodle version', 'toss the crispy chicken with rice noodles, sesame oil, and soy sauce — similar energy to Fried Rice Gone Wild.'],
+                ].map(([label, desc]) => (
+                  <div key={label} className="flex items-start gap-3">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-slap-orange/60 flex-shrink-0" aria-hidden="true" />
+                    <p className="font-body text-slap-muted text-base leading-relaxed">
+                      <span className="text-slap-cream font-medium">{label}</span> — {desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="font-body text-slap-muted text-sm mt-5 leading-relaxed">
+                Into spicy pasta instead? Try <Link to="/recipes/assassins-penne" className="text-slap-orange hover:underline">Penne all'Assassina</Link> — same bold, high-heat energy. Into fried rice? <Link to="/recipes/fried-rice-gone-wild" className="text-slap-orange hover:underline">Fried Rice Gone Wild</Link> has the same late-night flavor logic.
+              </p>
+            </div>
+
+            {/* More SlapCooking Recipes */}
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="inline-block w-5 h-px bg-slap-orange opacity-70 flex-shrink-0" />
+                <span className="font-body text-slap-orange text-xs font-semibold tracking-widest uppercase">
+                  More SlapCooking Recipes
+                </span>
+              </div>
+              <p className="font-body text-slap-muted text-sm mb-6">
+                Keep the momentum going.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {[
+                  { slug: 'assassins-penne', label: "Penne all'Assassina", desc: 'Crispy spicy tomato pasta. Bari-style assassin energy.' },
+                  { slug: 'crispy-gnocchi-situation', label: 'Crispy Gnocchi Situation', desc: "Don't boil it. Pan-fry it. Then make it saucy." },
+                  { slug: 'fried-rice-gone-wild', label: 'Fried Rice Gone Wild', desc: 'A freezer-bag classic with egg, crunch, heat, and late-night flavor.' },
+                ].map((r) => (
+                  <Link
+                    key={r.slug}
+                    to={`/recipes/${r.slug}`}
+                    className="group relative bg-slap-char rounded-xl border border-slap-smoke hover:border-slap-orange/30 p-4 overflow-hidden transition-all duration-200"
+                  >
+                    <div className="absolute left-0 top-3 bottom-3 w-0.5 bg-slap-orange/50 rounded-r-full" />
+                    <h4 className="font-display text-base text-slap-cream mb-1.5 group-hover:text-slap-orange transition-colors duration-200">
+                      {r.label}
+                    </h4>
+                    <p className="font-body text-slap-muted text-xs leading-relaxed">
+                      {r.desc}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+
         {/* Next Recipe CTA */}
         <div className="border-t border-slap-smoke pt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
