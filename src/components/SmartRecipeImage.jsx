@@ -6,7 +6,7 @@ import { useState } from 'react'
  */
 export function SmartRecipeThumb({ slug, title }) {
   const [failed, setFailed] = useState(false)
-  const src = `/images/recipes/${slug}/thumb.png`
+  const src = `/images/${slug}/thumb.png`
 
   if (failed) return null
 
@@ -27,7 +27,7 @@ export function SmartRecipeThumb({ slug, title }) {
  */
 export function SmartRecipeHero({ slug, title }) {
   const [failed, setFailed] = useState(false)
-  const src = `/images/recipes/${slug}/hero.png`
+  const src = `/images/${slug}/hero.png`
 
   if (failed) return null
 
